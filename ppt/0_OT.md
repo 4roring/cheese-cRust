@@ -49,9 +49,27 @@ Rust 입문을 환영합니다
 
 # Rust 소개
 
-Visual Studio Code
-Rust
-LLDB (Debugger)
+---
+
+-  Mozila 재단에서 시작, 현재는 Rust 재단에서 개발 및 배포를 담당하고 있는 언어
+-  리눅스 커널에서 사용할 수 있는 2번째 언어 (첫번째는 C)
+
+---
+
+![width:800px](../images/0_OT/00_tiobe.png)
+
+
+---
+
+# Rust 활용 사례
+
+---
+
+![](../images/0_OT/01_use_case.png)
+
+Google은 Android OS내 Rust 도입, 보안 취약점 해결
+MS에서도 제품내 일부 코드를 Rust로 대체 중
+
 
 ---
 
@@ -62,3 +80,9 @@ Rust
 LLDB (Debugger)
 
 ---
+
+# 공부할 예정인 Rust만의 특징
+
+표현식 기반 언어
+메모리 소유권과 참조
+동시성
