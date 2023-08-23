@@ -1,5 +1,7 @@
 # 가짜연구소 Rust 스터디 정리한 자료 저장소
 
+Marp를 활용하여 스터디 자료를 정리중입니다.
+
 ## [발표자료 목차 페이지](https://4roring.github.io/cheese-cRust/)
 
-## [OT](https://4roring.github.io/cheese-cRust/0_OT.html)
+[0주차 - OT](https://4roring.github.io/cheese-cRust/ppt/0_OT.html)
