@@ -408,7 +408,213 @@ fn another_function(x: i32) {
 
 ---
 
-# 구문과 표현식
+## 구문과 표현식
 
 - 함수 본문은 필요에 따라 표현식(expression)으로 끝나는 구문(statement)의 나열로 구성
 - 러스트는 표현식 기반 언어
+
+---
+
+```rust
+fn main() {
+    let y = 6;
+}
+```
+- let 키워드로 변수를 만들고 값을 할당하는 것은 구문
+- let y = 6; 은 구문
+- 구문은 값을 반환하지 않는다
+
+---
+
+```rust
+let x = (let y = 6);  // error
+```
+- 값을 반환하지 않기에 let 구문을 다른 변수에 할당하려고 하면 에러 발생
+- C/C++이였다면 int x = y = 6; 과 같이 작성했을 것이지만 rust는 허용 X
+
+---
+
+```rust
+let y = {
+    let x = 3;
+    x + 1       // 이 라인의 결과가 반환됨
+};
+```
+
+- 위 코드의 중괄호로 만든 스코프는 표현식
+- **러스트에서 작성하는건 대부분 표현식**
+- let x = 3; 라인에서 숫자 3은 표현식
+- **표현식은 종결을 나타내는 세미콜론(;) 사용 X**
+
+---
+
+## 반환 값을 갖는 함수
+```rust
+fn five() -> i32 {
+    5
+}
+```
+
+- 반환 값을 명명할 필요는 없음, 타입은 화살표(->) 뒤에 선언 해야함
+- return 키워드로 함수 도중에 나갈 수 있음
+- 대부분 함수는 암묵적으로 마지막 표현식 값을 반환
+- 위 코드 숫자 5 뒤에 세미콜론이 들어가면 에러 발생
+
+---
+
+## 주석
+
+```rust
+// 주석입니다
+```
+
+- 기본적인 주석은 // 뒤에 작성
+- 문서화 주석이 존재하는데 추후에 다룸 (python의 docstring 같은?)
+
+---
+
+## 제어 흐름문 if
+
+```rust
+if num < 5 {
+    println!("num 은 5미만");
+} else if num < 10 {
+    println!("num 은 5 이상 10미만");
+} else {
+    println!("num 은 10 이상");
+}
+```
+
+- 다른 언어와 동일하게 if 뒤에 조건
+- C/C++과 달리 조건문에 괄호는 쓰지 않음
+- else if, else 사용은 동일
+- bool 타입을 넣지 않으면 에러가 발생
+(Python은 다 넣을 수 있다...)
+
+---
+
+## let 구문에서 if
+
+```rust
+let condition = true;
+let num = if condition { 5 } else { 6 };
+```
+
+- 다른 언어의 3항 연산자 비슷?
+- condition이 true 이기에 num은 5
+- 각각 다른 타입을 반환받을 수 없다 (컴파일 에러발생)
+
+---
+
+## 반복문을 이용한 반복
+loop, while, for
+
+---
+
+## loop
+
+```rust
+loop {
+    (반복될 코드)
+}
+```
+- 아무 조건 없는 반복문
+- 다른 언어였으면 보통 while(true)로 사용했을 것
+- 다른 언어와 동일하게 continue로 다름 루프로 건너뛸 수 있고, break 문으로 빠져나올 수 있다
+
+---
+
+## 반복문에서 값 반환
+
+```rust
+let mut counter = 0;
+
+let result = loop {
+    counter += 1;
+
+    if counter == 10 {
+        break counter * 2;
+    }
+};
+```
+
+- break 표현식 뒤에 반환할 값을 넣으면 반환
+- counter가 10이 되면 counter * 2를 반환하는 코드
+
+---
+
+## loop 라벨로 여러 반복문 사이 모호함 제거
+
+---
+
+```rust
+let mut count = 0;
+'counting_up: loop {
+    println!("count = {count}");
+    let mut remaining = 10;
+
+    loop {
+        println!("remaining = {remaining}");
+        if remaining == 9 {
+            break;
+        }
+        if count == 2 {
+            break 'counting_up;
+        }
+        remaining -= 1;
+    }
+    count += 1;
+}
+```
+
+'counting_up 라벨을 바깥 루프에 적용, 안쪽 loop에서 
+바깥 'counting_up: loop를 break 할 수 있다!!!
+
+---
+
+# while
+
+```rust
+while number != 0 {
+    println!("{number}!");
+    number -= 1;
+}
+```
+
+- 조건이 true인 동안 반복되는 반복문
+
+---
+
+# for
+
+```rust
+let a = [10, 20, 30, 40, 50];
+for element in a {
+    println!("the value is: {element}");
+}
+```
+
+- for로 배열 등 컬렉션을 순회 돌 수 있음
+
+---
+
+```rust
+for num in 1..4 {
+    println!("the value is: {num}");
+}
+```
+
+- 1..4는 Range 타입
+- 1~3까지 반복
+- 4까지 하고싶다면 1..=4
+
+---
+
+```rust
+for num in (1..4).rev() {
+    println!("the value is: {num}");
+}
+```
+
+- Range 객체의 기능을 사용하고 싶다면 괄호로 감싸서 사용
+- rev는 reverse, 3~1까지 역순으로 출력
