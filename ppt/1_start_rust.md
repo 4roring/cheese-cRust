@@ -618,3 +618,19 @@ for num in (1..4).rev() {
 
 - Range 객체의 기능을 사용하고 싶다면 괄호로 감싸서 사용
 - rev는 reverse, 3~1까지 역순으로 출력
+
+---
+
+# 1주차 미션
+
+---
+
+![width:350px](../images/1_Start/00_mission_guessing_game_result.png)
+- 숫자 추리 게임에서 몇 번만에 풀었는지 결과 출력 
+**(필수 미션)**
+
+---
+
+![](../images/1_Start/01_mission_fibo_result.png)
+- [백준 2747번 피보나치 수](https://www.acmicpc.net/problem/2747) Rust로 풀고 내 제출 결과 공유 
+**(선택 미션)**
