@@ -1,6 +1,6 @@
 ---
 marp: true
-title: cheese cRust OT
+title: cheese cRust 1주차
 paginate: true
 theme: uncover
 ---
