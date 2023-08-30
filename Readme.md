@@ -5,4 +5,5 @@
 ## [발표자료 목차 페이지](https://4roring.github.io/cheese-cRust/)
 
 [0주차 - OT](https://4roring.github.io/cheese-cRust/ppt/0_OT.html)  
-[1주차 - Hello World, 추리 게임, 보편적인 프로그래밍 개념](https://4roring.github.io/cheese-cRust/ppt/1_rust_start.html)
+[1주차 - Hello World, 추리 게임, 보편적인 프로그래밍 개념](https://4roring.github.io/cheese-cRust/ppt/1_start_rust.html)
+[2주차 - 소유권 이해하기](https://4roring.github.io/cheese-cRust/ppt/2_ownership.html)
