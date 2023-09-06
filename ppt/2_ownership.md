@@ -380,5 +380,5 @@ let slice = &a[1..3];  // [2, 3]
 
 ![height:500px](../images/2_OwnerShip/03_essential_mission.png)
 
-- [저장소의 missions/week2/main.rs 완성하기](https://github.com/4roring/cheese-cRust/tree/master/missions/week2/main.rs)
+- [저장소의 missions/week2/src/main.rs 완성하기](https://github.com/4roring/cheese-cRust/tree/master/missions/week2/src/main.rs)
 **(필수 미션)**
