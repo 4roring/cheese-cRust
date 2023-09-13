@@ -466,3 +466,12 @@ match dice_roll {
 
 ## if let을 사용한 간결한 제어 흐름
 
+```rust
+let config_max = Some(3u8);
+if let Some(max) = config_max {
+    println!("The maximum is configured to be {}", max);
+}
+```
+
+- match를 사용할 때 보다 간결하게 사용 가능
+- 단 미구현 갈래에 대한 검증을 하지 않아 개발 상황에 따른 고민 필요
