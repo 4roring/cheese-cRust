@@ -86,3 +86,50 @@ println!("New article available! {}", article.summarize());
 ---
 
 ## 매개변수로서의 트레이트
+
+```rust
+pub fn notify(item: &impl Summary) {
+    println!("Breaking news! {}", item.summarize());
+}
+```
+
+- Summary 트레이트를 구현한 객체라면 전부 인자로 사용 가능
+
+---
+
+## 트레이트 바운드 문법
+
+```rust
+pub fn notify<T: Summary>(item: &T) {
+    println!("Breaking news! {}", item.summarize());
+}
+```
+
+- 콜론(:) 뒤가 트레이트 바운드
+- 조금 더 복잡한 상황에서 활용 가능
+
+---
+
+```rust
+pub fn notify(item1: &impl Summary, item2: &impl Summary) {
+```
+↓
+```rust
+pub fn notify<T: Summary>(item1: &T, item2: &T) {
+```
+
+- 위와 같이 각각 impl 문법을 통하여 타입을 지정했던 것을 줄일 수 있음
+
+---
+
+## 구문으로 트레이트 바운드를 여럿 지정
+
+```rust
+pub fn notify(item: &(impl Summary + Display)) {
+```
+or
+```rust
+pub fn notify<T: Summary + Display>(item: &T) {
+```
+
+- 
