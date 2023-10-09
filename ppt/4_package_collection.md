@@ -13,7 +13,7 @@ theme: uncover
 
 # **cheese cRust** 
 # 가짜연구소 Rust 4주차
-에러처리, 제네릭
+패키지, 컬렉션
 ![height:300px](../images/study_logo.png) ![height:300px](../images/pseudo_lab_logo.jpg)
 
 ---

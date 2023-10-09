@@ -7,5 +7,6 @@
 [0주차 - OT](https://4roring.github.io/cheese-cRust/ppt/0_OT.html)  
 [1주차 - Hello World, 추리 게임, 보편적인 프로그래밍 개념](https://4roring.github.io/cheese-cRust/ppt/1_start_rust.html)  
 [2주차 - 소유권 이해하기](https://4roring.github.io/cheese-cRust/ppt/2_ownership.html)
-
-[3주차 - 구조체, 열거형, 패턴매칭](https://4roring.github.io/cheese-cRust/ppt/3_structure_enum.html)
+[3주차 - 구조체, 열거형, 패턴매칭](https://4roring.github.io/cheese-cRust/ppt/3_structure_enum.html)  
+4주차 - 패키지, 컬렉션  
+[5주차 - 에러처리, 제네릭](https://4roring.github.io/cheese-cRust/ppt/5_error_generic.html)
