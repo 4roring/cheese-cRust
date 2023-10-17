@@ -10,5 +10,5 @@
 [3주차 - 구조체, 열거형, 패턴매칭](https://4roring.github.io/cheese-cRust/ppt/3_structure_enum.html)  
 4주차 - 패키지, 컬렉션  
 [5주차 - 에러처리, 제네릭](https://4roring.github.io/cheese-cRust/ppt/5_error_generic.html)  
-6주차 - trait, 라이프타임  
+[6주차 - trait, 라이프타임](https://4roring.github.io/cheese-cRust/ppt/6_trait_lifetime.html)  
 7주차 - 테스트, 함수형 언어 특성  

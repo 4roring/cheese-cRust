@@ -454,5 +454,7 @@ where
 
 ---
 
-- 12.I/O프로젝트: 커멘드 라인 프로그램 만들기의 12.3, 12.4, 12.5를 작업
+![height:550px](../images/6_trait_lifetime/mission_simple_grep_2.png)
+- 12.I/O프로젝트: 커멘드 라인 프로그램 만들기의 나머지 내용 작업 진행
+- 폴더 구조, 환경 변수 IGNORE_CASE On, Off 결과가 스샷에 포함되도록
 **(필수 미션)**
