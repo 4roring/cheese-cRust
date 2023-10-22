@@ -13,7 +13,7 @@ theme: uncover
 
 # **cheese cRust** 
 # 가짜연구소 Rust 7주차
-test 작성, 함수형 언어의 특징
+test 작성
 ![height:300px](../images/study_logo.png) ![height:300px](../images/pseudo_lab_logo.jpg)
 
 ---
@@ -380,146 +380,21 @@ adder
 
 ## 기능 테스트 vs 비기능 테스트
 
-TODO: 간단하게 정리
+| 기능 테스트 | 비기능 테스트 |
+|------------|--------------|
+| 기능 중심의 테스트 | 요구사항 중심적 테스트 |
+| 단위, 통합 테스트 등 | 성능, 스트레스, 보안 테스트 등 |
+
+- 기능 테스트는 코드 위주의 기능 테스트
+- 비기능 테스트는 실제 서비스 등 다양한 상황에 대한 테스트
 
 ---
 
-# 함수형 언어의 특징: 반복자와 클로저
-
-- 함수를 값처럼 넘기는 것
-- 다른 함수 결과값을 함수로 반환하는 것
-- 나중에 실행하기 위해 변수에 함수를 할당하는 것
+# 7주차 미션
 
 ---
 
-## 클로저 (Closure)
+![height:400px](../images/7_test/mission_simple_grep_3.png) ![height:400px](../images/7_test/mission_test.png)
 
-- 변수나 다른 함수에 전달 할 수 있는 익명 함수
-- 함수와 다른 점은 정의된 클래스에서 값을 캡처할 수 있음
-
----
-
-## 캡처
-
-```rust
-impl MyFile {
-    fn create_file(&self, file_path: &str) { ... }
-
-    fn load_file(&self, file_path: &str) {
-        let greeting_file = File::open(file_path).unwrap_or_else(|| {
-            create_file(file_path);
-        });
-    }
-}
-
-```
-- 예시 간단한 버전 다시 만들어서 정리...
-
----
-
-## 클로저 타입 추론과 명시
-
-```rust
-fn add_one_v1(x: u32) -> u32 { x + 1 }
-let add_one_v2 = |x: u32| -> u32 { x + 1 };
-let add_one_v3 = |x| { x + 1 };
-let add_one_v4 = |x| x + 1;
-```
-
-- 함수와 비교하여 두번째는 모든 것이 명시된 클로저
-- 세번째는 리턴 타입이 제거된 클로저
-- 네번째는 표현식이 하나 뿐이라 중괄호도 없는 클로저
-
----
-
-```rust
-let example_closure = |x| x;    
-let s = example_closure(String::from("hello"));    
-let n = example_closure(5);
-```
-
-- 타입 명시 없이 두 타입에 대해 클로저 사용시 컴파일 에러
-- 처음 컴파일러가 String 타입으로 추론하고 타입을 고정해버림
-
----
-
-## 참조자를 캡처 또는 소유권 이동
-
-```rust 
-let list = vec![1, 2, 3];    
-println!("Before defining closure: {:?}", list);
-let only_borrows = || println!("From closure: {:?}", list);
-println!("Before calling closure: {:?}", list);
-only_borrows();
-println!("After calling closure: {:?}", list); 
-```
-
-- 세가지 방식으로 자신의 환경의 값을 가져올 수 있음
-- 위 방법은 불변 참조자를 가져와서 사용하는 부분
-- 컴파일 에러 없이 전부 출력된다
-
----
-
-```rust
-let mut list = vec![1, 2, 3];
-println!("Before defining closure: {:?}", list);
-let mut borrows_mutably = || list.push(7);
-borrows_mutably();
-println!("After calling closure: {:?}", list); 
-```
-
-- 가변 참조자 캡처
-
----
-
-```rust
-use std::thread;
-fn main() {
-    let list = vec![1, 2, 3];
-    println!("Before defining closure: {:?}", list);
-    thread::spawn(move || println!("From thread: {:?}", list))
-        .join()
-        .unwrap();
-}
-```
-
-- 스레드에 데이터 소유권을 넘겨서 출력하는 코드
-
-
----
-
-
-## 캡처한 값을 클로저 밖으로 이동, Fn 크레이트
-
-
----
-
-## 반복자로 일련의 아이템 처리
-
----
-
-## Iterator 트레이트, next 메서드
-
----
-
-## 반복자를 소비하는 메서드
-
----
-
-## 다른 반복자를 생성하는 메서드
-
----
-
-## 환경을 캡처하는 클로저
-
----
-
-## 반복자 어댑터로 더 간결한 코드 만들기
-
----
-
-## 루프와 반복자 선택하기
-
----
-
-## 루프 vs 반복자 
+- 13.3 I/O 프로젝트 개선하기 진행 후 개선 코드를 포함한 출력 결과 스샷
+- a와 b에 대한 사칙 연산에 대한 함수를 만들고 테스트 코드 스샷
