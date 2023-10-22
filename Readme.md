@@ -11,4 +11,6 @@
 4주차 - 패키지, 컬렉션  
 [5주차 - 에러처리, 제네릭](https://4roring.github.io/cheese-cRust/ppt/5_error_generic.html)  
 [6주차 - trait, 라이프타임](https://4roring.github.io/cheese-cRust/ppt/6_trait_lifetime.html)  
-7주차 - 테스트, 함수형 언어 특성  
+[7주차 - 테스트](https://4roring.github.io/cheese-cRust/ppt/6_trait_lifetime.html)  
+8주차 - 함수형 언어 특징  
+9주차 - 스마트 포인터  
