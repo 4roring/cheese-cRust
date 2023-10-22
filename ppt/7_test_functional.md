@@ -413,8 +413,11 @@ impl MyFile {
 }
 
 ```
+- 예시 간단한 버전 다시 만들어서 정리...
 
 ---
+
+## 클로저 타입 추론과 명시
 
 ```rust
 fn add_one_v1(x: u32) -> u32 { x + 1 }
@@ -427,4 +430,96 @@ let add_one_v4 = |x| x + 1;
 - 세번째는 리턴 타입이 제거된 클로저
 - 네번째는 표현식이 하나 뿐이라 중괄호도 없는 클로저
 
+---
 
+```rust
+let example_closure = |x| x;    
+let s = example_closure(String::from("hello"));    
+let n = example_closure(5);
+```
+
+- 타입 명시 없이 두 타입에 대해 클로저 사용시 컴파일 에러
+- 처음 컴파일러가 String 타입으로 추론하고 타입을 고정해버림
+
+---
+
+## 참조자를 캡처 또는 소유권 이동
+
+```rust 
+let list = vec![1, 2, 3];    
+println!("Before defining closure: {:?}", list);
+let only_borrows = || println!("From closure: {:?}", list);
+println!("Before calling closure: {:?}", list);
+only_borrows();
+println!("After calling closure: {:?}", list); 
+```
+
+- 세가지 방식으로 자신의 환경의 값을 가져올 수 있음
+- 위 방법은 불변 참조자를 가져와서 사용하는 부분
+- 컴파일 에러 없이 전부 출력된다
+
+---
+
+```rust
+let mut list = vec![1, 2, 3];
+println!("Before defining closure: {:?}", list);
+let mut borrows_mutably = || list.push(7);
+borrows_mutably();
+println!("After calling closure: {:?}", list); 
+```
+
+- 가변 참조자 캡처
+
+---
+
+```rust
+use std::thread;
+fn main() {
+    let list = vec![1, 2, 3];
+    println!("Before defining closure: {:?}", list);
+    thread::spawn(move || println!("From thread: {:?}", list))
+        .join()
+        .unwrap();
+}
+```
+
+- 스레드에 데이터 소유권을 넘겨서 출력하는 코드
+
+
+---
+
+
+## 캡처한 값을 클로저 밖으로 이동, Fn 크레이트
+
+
+---
+
+## 반복자로 일련의 아이템 처리
+
+---
+
+## Iterator 트레이트, next 메서드
+
+---
+
+## 반복자를 소비하는 메서드
+
+---
+
+## 다른 반복자를 생성하는 메서드
+
+---
+
+## 환경을 캡처하는 클로저
+
+---
+
+## 반복자 어댑터로 더 간결한 코드 만들기
+
+---
+
+## 루프와 반복자 선택하기
+
+---
+
+## 루프 vs 반복자 
