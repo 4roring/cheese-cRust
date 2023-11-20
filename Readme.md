@@ -14,3 +14,4 @@
 [7주차 - 테스트](https://4roring.github.io/cheese-cRust/ppt/6_trait_lifetime.html)  
 8주차 - 함수형 언어 특징  
 9주차 - 스마트 포인터  
+10주차 - 겁 없는 동시성
